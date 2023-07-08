@@ -18,7 +18,7 @@ def lambda_handler(event, context):
 
                 try:
                     # ユーザー情報マスタ取得
-                    sql = "SELECT * FROM login_info_table WHERE user_id = '1';"
+                    sql = "SELECT * FROM t_login_info WHERE user_id = '1';"
                     
                     for result in connect.query(conn, sql):
                         # ログイン種別が正か確認
@@ -47,7 +47,7 @@ def lambda_handler(event, context):
     
 
 def responseData(body):
-    print(body)
+   # print(body)
     return {
         "headers": {
             "Access-Control-Allow-Origin": "*",
